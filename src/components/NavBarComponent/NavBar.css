@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white;
+    color:black;
+    height:70px;
+    padding-inline:5%;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+} 
