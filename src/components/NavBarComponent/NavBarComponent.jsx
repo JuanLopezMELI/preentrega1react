@@ -1,25 +1,26 @@
 import ListItemComponent from "../ListItemComponent/ListItemComponent";
 import NavIconComponent from "../NavIconComponent/NavIconComponent";
-import {FaUser, FaSearch} from "react-icons/fa";
-import {FaCartShopping} from "react-icons/fa6";
+import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
+import PersonIcon from '@mui/icons-material/Person';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 import "./NavBar.css";
 
 const NavBarComponent = () => {
   const items = [
-    {title: "Home", link: "#"},
     {title: "About", link: "#"},
     {title: "Products", link: "#"},
     {title: "Contact", link: "#"},
   ];
 
   const icons = [
-    {iconName:"search", link:"", icon: FaSearch},
-    {iconName:"cart", link:"", icon: FaCartShopping},
-    {iconName:"login", link:"", icon: FaUser},
+    {iconName:"search", link:"", icon: SearchIcon},
+    {iconName:"login", link:"", icon: PersonIcon}
   ]
   return (
     <nav>
+      <img src="./src/assets/logo.png" alt="Kafe logo"/>
       {items.map((item) => (
         <ListItemComponent
           key={item.title}
@@ -28,13 +29,14 @@ const NavBarComponent = () => {
         />
       ))}
       <div className="icons-container">
-      {icons.map((icon) => (
-        <NavIconComponent
-          key={icon.iconName}
-          icon={<icon.icon/>}
-          link={icon.link}
-        />
-      ))}
+        {icons.map((icon) => (
+          <NavIconComponent
+            key={icon.iconName}
+            icon={<icon.icon/>}
+            link={icon.link}
+          />
+        ))}
+        <CartWidgetComponent/>
       </div>
     </nav>
   );
