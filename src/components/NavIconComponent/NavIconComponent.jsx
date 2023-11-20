@@ -1,11 +1,12 @@
 import "./NavIcon.css";
+import { Link } from 'react-router-dom'
 
 // eslint-disable-next-line react/prop-types
 const NavIconComponent = ({ icon, link}) => {
     return (
-        <a href={link}>
+        <Link to={link}>
             {icon}
-        </a>
+        </Link>
     );
 };
 

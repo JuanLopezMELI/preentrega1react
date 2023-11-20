@@ -1,0 +1,22 @@
+.hero-section-container {
+    border-bottom: 1px solid #eaeaea;
+    background-color: rgba(255, 255, 255, 0.87);
+    min-height: 95vh;
+}
+
+.greeting {
+    margin: 0;
+    padding-block: 15px;
+    color: black;
+    border-top: 1px solid #d8d0d0;
+    text-align: center;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0 0 15px 0;
+    gap: 10px;
+}
