@@ -4,9 +4,10 @@ import NavIconComponent from "../NavIconComponent/NavIconComponent";
 import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
-
-import "./NavBar.css";
 import {useCategories} from "../../hooks/useCategories";
+
+import logo from "../../assets/logo.png"
+import "./NavBar.css";
 
 const NavBarComponent = () => {
   const {categories} = useCategories();
@@ -22,15 +23,15 @@ const NavBarComponent = () => {
   ];
 
   const icons = [
-    {iconName: "search", link: "", icon: SearchIcon},
-    {iconName: "login", link: "", icon: PersonIcon},
+    {iconName: "search", link: "/search", icon: SearchIcon},
+    {iconName: "login", link: "/login", icon: PersonIcon},
   ];
 
   return (
     <nav>
       <Link to="/">
         <img
-          src="src/assets/logo.png"
+          src={logo}
           alt="Kafe logo"
           className="main-logo"
         />
