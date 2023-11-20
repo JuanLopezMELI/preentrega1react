@@ -13,6 +13,7 @@ export const useAllProducts = () => {
         })
         .catch((err) => {
           setError(true);
+          console.log(err);
         })
         .finally(() => {
           setIsLoading(false);
@@ -34,6 +35,7 @@ export const useProductById = (id) => {
         })
         .catch((err) => {
           setError(true);
+          console.log(err);
         })
         .finally(() => {
           setIsLoading(false);
@@ -55,6 +57,7 @@ export const useProductByCategory = (category) => {
         })
         .catch((err) => {
           setError(true);
+          console.log(err);
         })
         .finally(() => {
           setIsLoading(false);
