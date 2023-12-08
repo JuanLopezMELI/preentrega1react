@@ -9,13 +9,24 @@ import {LoaderComponent} from "../LoaderComponent/LoaderComponent";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 
 import "./ItemDetailContainer.css";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 export const ItemDetailContainerComponent = () => {
   const {itemId} = useParams();
-
+  const {cart, setCart} = useContext(CartContext);
   const {product, isLoading, error} = useProductById(itemId);
 
-  console.log(product);
+  const addToCart = () => {
+    let cartProduct = cart.find((product) => product.id === itemId);
+    if (cartProduct) {
+      cartProduct.quantity++;
+      setCart([...cart]);
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  }
+
   return isLoading ? (
     <LoaderComponent />
   ) : error ? (
@@ -40,8 +51,8 @@ export const ItemDetailContainerComponent = () => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Add to cart
+          <Button size="small" color="primary" onClick={addToCart}>
+            Agregar al carrito
           </Button>
         </CardActions>
       </Card>

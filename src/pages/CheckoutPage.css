@@ -1,0 +1,128 @@
+.checkout-title {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.checkout-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-title {
+    padding-bottom: 1%;
+}
+
+.checkout-info {
+    width: 65%;
+    border: 3px solid #f5f5f5;
+    border-radius: 5px;
+    margin-top: 5%;
+    padding-inline: 5%;
+}
+
+.checkout-products-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card {
+    display: flex;
+    padding-block: 1%;
+}
+
+.product-image {
+    width: 300px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.product-info {
+    width: 100%;
+}
+
+.product-info p {
+    margin: 0;
+    color: black;
+    text-align: right;
+}
+
+.total-price {
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.product-title {
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: right;
+    padding-block: 5%;
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.item-quantity {
+    font-size: 16px;
+}
+
+.remove-button, .clear-cart {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.add-button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.purchase-button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    text-decoration: none;
+    width: 90px;
+    text-align: center;
+}
+
+.purchase-button:hover {
+    background-color: #006400;
+}
+
+.remove-button:hover, .clear-cart:hover {
+    background-color: #8b0000;
+}

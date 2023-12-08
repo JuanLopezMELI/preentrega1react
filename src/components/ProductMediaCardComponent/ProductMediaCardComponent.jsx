@@ -2,16 +2,29 @@
 
 import {Link} from "react-router-dom";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import CardActions from "@mui/material/CardActions"
+import Button from "@mui/material/Button"
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export const ProductMediaCard = ({product}) => {
+  const {cart, setCart} = useContext(CartContext);
+
+  const addToCart = () => {
+    let cartProduct = cart.find((item) => item.id === product.id);
+    if (cartProduct) {
+      cartProduct.quantity++;
+      setCart([...cart]);
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  }
   return (
       <Card sx={{maxWidth: "30%", flexGrow: 1}}>
-        <Link key={product.id} to={`/item/${product.id}`}>
+        <Link key={product.id} to={`/item/${product.id}`} style={{textDecoration:"none"}}>
         <CardMedia
           component="img"
           alt={product.title}
@@ -27,10 +40,12 @@ export const ProductMediaCard = ({product}) => {
             {product.description}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Add to cart</Button>
-        </CardActions>
         </Link>
+        <CardActions>
+          <Button size="small" color="primary" onClick={addToCart}>
+            Agregar al carrito
+          </Button>
+        </CardActions>
       </Card>
   );
 };
