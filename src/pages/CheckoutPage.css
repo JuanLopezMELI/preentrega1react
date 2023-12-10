@@ -15,7 +15,7 @@
 }
 
 .checkout-info {
-    width: 65%;
+    width: 80%;
     border: 3px solid #f5f5f5;
     border-radius: 5px;
     margin-top: 5%;
@@ -80,7 +80,8 @@
     font-size: 16px;
 }
 
-.remove-button, .clear-cart {
+.remove-button,
+.clear-cart {
     background-color: red;
     color: white;
     border: none;
@@ -92,19 +93,8 @@
     margin-left: 10px;
 }
 
-.add-button {
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.purchase-button {
+.purchase-button,
+.add-more-button {
     background-color: green;
     color: white;
     border: none;
@@ -115,14 +105,40 @@
     cursor: pointer;
     margin-left: 10px;
     text-decoration: none;
-    width: 90px;
+    width: fit-content;
     text-align: center;
+    margin-block: 5px;
 }
 
-.purchase-button:hover {
-    background-color: #006400;
+.remove-button:focus,
+.clear-cart:focus {
+    box-shadow: rgba(231, 17, 46, 0.4) 0 0 0 3px;
+    outline: none;
 }
 
-.remove-button:hover, .clear-cart:hover {
-    background-color: #8b0000;
+.remove-button:disabled,
+.clear-cart:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(231, 17, 46, 0.4) 0 0 0 3px;
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+.remove-button:active,
+.clear-cart:active {
+    background-color: red;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+#quantity-input {
+    width: 50px;
+    border: 0;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: rgb(56, 58, 63);
+    color: #fff;
+    appearance: none;
+    outline: 0;
+    margin-left: 10px;
 }

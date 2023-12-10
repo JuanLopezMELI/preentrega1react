@@ -23,7 +23,7 @@ export const ItemDetailContainerComponent = () => {
       cartProduct.quantity++;
       setCart([...cart]);
     } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
+      setCart([...cart, { ...{id: product.id, price: product.price, title: product.title, image: product.image}, quantity: 1 }]);
     }
   }
 

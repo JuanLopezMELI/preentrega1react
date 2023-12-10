@@ -6,6 +6,7 @@ import {ItemDetailContainerComponent} from "../components/ItemDetailContainerCom
 import {CartContext} from "../context/CartContext";
 import { useState } from "react";
 import { CheckoutPage } from "../pages/CheckoutPage";
+import { SucessPurchasePage } from "../pages/SuccessPurchasePage";
 
 export const AppRouter = () => {
   const [cart, setCart] = useState([]);
@@ -54,6 +55,10 @@ export const AppRouter = () => {
           <Route
             path="/search"
             element={<BasicPage title="Search component will be here soon" />}
+          />
+          <Route
+            path="/purchase/successful"
+            element={<SucessPurchasePage products={cart}/>}
           />
         </Routes>
       </CartContext.Provider>

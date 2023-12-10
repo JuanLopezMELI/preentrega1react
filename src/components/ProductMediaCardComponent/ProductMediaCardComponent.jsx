@@ -19,9 +19,10 @@ export const ProductMediaCard = ({product}) => {
       cartProduct.quantity++;
       setCart([...cart]);
     } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
+      setCart([...cart, { ...{id: product.id, price: product.price, title: product.title, image: product.image}, quantity: 1 }]);
     }
   }
+
   return (
       <Card sx={{maxWidth: "30%", flexGrow: 1}}>
         <Link key={product.id} to={`/item/${product.id}`} style={{textDecoration:"none"}}>
