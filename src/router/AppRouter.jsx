@@ -4,9 +4,11 @@ import ItemListContainerComponent from "../components/ItemListContainerComponent
 import {BasicPage} from "../pages/BasicPage";
 import {ItemDetailContainerComponent} from "../components/ItemDetailContainerComponent/ItemDetailContainerComponent";
 import {CartContext} from "../context/CartContext";
-import { useState } from "react";
-import { CheckoutPage } from "../pages/CheckoutPage";
-import { SucessPurchasePage } from "../pages/SuccessPurchasePage";
+import {useState} from "react";
+import {CheckoutPage} from "../pages/CheckoutPage";
+import {SucessPurchasePage} from "../pages/SuccessPurchasePage";
+import {AboutPage} from "../pages/AboutPage";
+import { ContactPage } from "../pages/ContactPage";
 
 export const AppRouter = () => {
   const [cart, setCart] = useState([]);
@@ -21,7 +23,7 @@ export const AppRouter = () => {
             element={
               <ItemListContainerComponent
                 greeting={
-                  "¡Bienvenido a Kafe! Aprovecha nuestras promociones y convierte tu casa en un lugar soñado."
+                  "¡Welcome to kafe! Take advantage of our promotions and turn your home into a dream place."
                 }
               />
             }
@@ -31,7 +33,7 @@ export const AppRouter = () => {
             element={
               <ItemListContainerComponent
                 greeting={
-                  "¡Bienvenido a Kafe! Aprovecha nuestras promociones y convierte tu casa en un lugar soñado."
+                  "¡Welcome to kafe! Take advantage of our promotions and turn your home into a dream place."
                 }
               />
             }
@@ -40,14 +42,9 @@ export const AppRouter = () => {
             path="/item/:itemId"
             element={<ItemDetailContainerComponent />}
           />
-          <Route path="/about" element={<BasicPage title="About page" />} />
-          <Route path="/contact" element={<BasicPage title="Contact page" />} />
-          <Route
-            path="/cart"
-            element={
-              <CheckoutPage/>
-            }
-          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/cart" element={<CheckoutPage />} />
           <Route
             path="/login"
             element={<BasicPage title="Login component will be here soon" />}
@@ -56,10 +53,7 @@ export const AppRouter = () => {
             path="/search"
             element={<BasicPage title="Search component will be here soon" />}
           />
-          <Route
-            path="/purchase/successful"
-            element={<SucessPurchasePage/>}
-          />
+          <Route path="/purchase/successful" element={<SucessPurchasePage />} />
         </Routes>
       </CartContext.Provider>
     </BrowserRouter>

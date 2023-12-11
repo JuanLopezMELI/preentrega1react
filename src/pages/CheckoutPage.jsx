@@ -28,7 +28,7 @@ export const CheckoutPage = () => {
   return (
     <div className="checkout-container">
       <div className="checkout-info">
-        <h1 className="checkout-title">Resumen de tu compra</h1>
+        <h1 className="checkout-title">Purchase invoice</h1>
         <div className="checkout-products-container">
           {cart.map((item) => (
             <div key={item.id} className="product-card">
@@ -40,11 +40,11 @@ export const CheckoutPage = () => {
               <div className="product-info">
                 <p className="product-title">{item.title}</p>
                 <p>
-                  Precio unitario:{" "}
+                  Unit price:{" "}
                   <span className="item-price">{item.price}</span>
                 </p>
                 <p>
-                  Cantidad seleccionada:{" "}
+                  Selected Quantity:{" "}
                   <span className="item-quantity">{item.quantity}</span>
                 </p>
               </div>
@@ -73,7 +73,7 @@ export const CheckoutPage = () => {
                   }}
                   className="add-more-button"
                 >
-                  Agregar más
+                  Add more
                 </button>
                 <button
                   onClick={() => {
@@ -81,19 +81,19 @@ export const CheckoutPage = () => {
                   }}
                   className="remove-button"
                 >
-                  Remover
+                  Remove
                 </button>
               </div>
             </div>
           ))}
         </div>
-        <div className="total-price">{`Total a pagar: $${computeTotalPrice()}`}</div>
+        <div className="total-price">{`Total price: $${computeTotalPrice()}`}</div>
         <div className="button-container">
           <button className="clear-cart" onClick={clearCart}>
-            Limpiar carrito
+            Clear cart
           </button>
           <Link to="/purchase/successful" className="purchase-button">
-            Pagar
+            Purchase
           </Link>
         </div>
       </div>

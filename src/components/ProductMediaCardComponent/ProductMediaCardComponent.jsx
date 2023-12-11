@@ -44,7 +44,7 @@ export const ProductMediaCard = ({product}) => {
         </Link>
         <CardActions>
           <Button size="small" color="primary" onClick={addToCart}>
-            Agregar al carrito
+            Add to cart
           </Button>
         </CardActions>
       </Card>

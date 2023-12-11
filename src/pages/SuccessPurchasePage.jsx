@@ -16,18 +16,18 @@ export const SucessPurchasePage = () => {
 
   return (
     <div className="success-purchase-container">
-      <h1 className="success-purchase-title">¡Gracias por tu compra!</h1>
+      <h1 className="success-purchase-title">¡Thanks for your purchase!</h1>
       <p className="success-purchase-description">
-        Tu compra ha sido realizada con éxito. Te enviaremos un correo
-        electrónico con los detalles de tu compra.
+        Your purchase has been successfully completed. We will send you an email
+        with the details of your purchase.
       </p>
-      <p>¡Esperamos verte pronto!</p>
-      <p>Equipo de Kafe</p>
+      <p>¡We hope to see you again!</p>
+      <p>Kafe team</p>
       <p className="success-purchase-separator">---------------------------------------------</p>
-      <p>Detalle de tu compra:</p>
+      <p>Purchase details:</p>
       <p className="success-purchase-separator">---------------------------------------------</p>
       <div className="success-purchase-products-container">
-        <p>Productos:</p>
+        <p>Products:</p>
         {purchaseDetails.map((product) => (
           <p key={product.id}>{product.title}</p>
         ))}
@@ -35,7 +35,7 @@ export const SucessPurchasePage = () => {
       <p className="success-purchase-separator">---------------------------------------------</p>
       <p className="success-purchase-total-price">Total: ${`${computeTotalPrice(purchaseDetails)}`}</p>
       <p className="success-purchase-separator">---------------------------------------------</p>
-      <Link to={"/"} className="success-purchase-button">Volver a la tienda</Link>
+      <Link to={"/"} className="success-purchase-button">Go to the store</Link>
     </div>
   );
 };
