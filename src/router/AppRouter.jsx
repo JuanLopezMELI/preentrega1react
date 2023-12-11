@@ -8,7 +8,8 @@ import {useState} from "react";
 import {CheckoutPage} from "../pages/CheckoutPage";
 import {SucessPurchasePage} from "../pages/SuccessPurchasePage";
 import {AboutPage} from "../pages/AboutPage";
-import { ContactPage } from "../pages/ContactPage";
+import {ContactPage} from "../pages/ContactPage";
+import notFoundImage from "../assets/not_found.jpg";
 
 export const AppRouter = () => {
   const [cart, setCart] = useState([]);
@@ -54,6 +55,14 @@ export const AppRouter = () => {
             element={<BasicPage title="Search component will be here soon" />}
           />
           <Route path="/purchase/successful" element={<SucessPurchasePage />} />
+          <Route
+            path="*"
+            element={
+              <BasicPage>
+                <img src={notFoundImage} alt="Not Found" id="not-found-img"/>
+              </BasicPage>
+            }
+          />
         </Routes>
       </CartContext.Provider>
     </BrowserRouter>
