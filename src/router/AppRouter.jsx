@@ -58,7 +58,7 @@ export const AppRouter = () => {
           />
           <Route
             path="/purchase/successful"
-            element={<SucessPurchasePage products={cart}/>}
+            element={<SucessPurchasePage/>}
           />
         </Routes>
       </CartContext.Provider>

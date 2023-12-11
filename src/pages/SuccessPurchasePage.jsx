@@ -1,24 +1,18 @@
 /* eslint-disable react/prop-types */
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './SuccessPurchasePage.css'; 
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
-export const SucessPurchasePage = ({products}) => {
+export const SucessPurchasePage = () => {
 
-  const {setCart} = useContext(CartContext);
+  const {cart, setCart} = useContext(CartContext);
+  const [purchaseDetails, setPurchaseDetails] = useState([]);
 
-  const handleClearCart = () => {
+  useEffect(() => {
+    setPurchaseDetails(cart);
     setCart([]);
-  }
-
-  const computeTotalPrice = () => {
-    let totalPrice = 0;
-    products.forEach((product) => {
-      totalPrice += product.price * product.quantity;
-    });
-    return totalPrice;
-  }
+  }, []);
 
   return (
     <div className="success-purchase-container">
@@ -34,14 +28,22 @@ export const SucessPurchasePage = ({products}) => {
       <p className="success-purchase-separator">---------------------------------------------</p>
       <div className="success-purchase-products-container">
         <p>Productos:</p>
-        {products.map((product) => (
+        {purchaseDetails.map((product) => (
           <p key={product.id}>{product.title}</p>
         ))}
       </div>
       <p className="success-purchase-separator">---------------------------------------------</p>
-      <p className="success-purchase-total-price">Total: ${`${computeTotalPrice()}`}</p>
+      <p className="success-purchase-total-price">Total: ${`${computeTotalPrice(purchaseDetails)}`}</p>
       <p className="success-purchase-separator">---------------------------------------------</p>
-      <Link to={"/"} className="success-purchase-button" onClick={handleClearCart}>Volver a la tienda</Link>
+      <Link to={"/"} className="success-purchase-button">Volver a la tienda</Link>
     </div>
   );
 };
+
+const computeTotalPrice = (purchaseDetails) => {
+  let totalPrice = 0;
+  purchaseDetails.forEach((product) => {
+    totalPrice += product.price * product.quantity;
+  });
+  return totalPrice;
+}
